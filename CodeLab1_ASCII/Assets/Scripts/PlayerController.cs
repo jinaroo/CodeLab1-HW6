@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // ground check
     private bool grounded = false;
     public Transform groundCheck;
-    public float groundRadius = 1f;
+    public float groundCheckHeight = 1f;
     public LayerMask whatIsGround;
     
     // controls
@@ -27,14 +27,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        grounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.7f, groundCheckHeight), 0, whatIsGround);
 
         // movement
         float moveDirection = Input.GetAxis("Horizontal"); // checks to see if player is going left or right
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection*maxSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        rb.velocity = new Vector2(moveDirection * maxSpeed, rb.velocity.y);
 
         if (grounded && Input.GetKeyDown(jump))
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+            rb.AddForce(new Vector2(0, jumpForce));
             
     }
 }
