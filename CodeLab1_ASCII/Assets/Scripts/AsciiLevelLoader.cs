@@ -37,15 +37,19 @@ public class AsciiLevelLoader : MonoBehaviour
                     case 'X':
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/square"), transform);
                         break;
+                    case 'M':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/blob_monster"), transform);
+                        break;
+                    case 'S':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/spike"), transform);
+                        tile.GetComponent<Spike>().isSpikeUp = true; // this will start in the up position
+                        break;
+                    case 'Z':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/spike"), transform);
+                        break;
                     case 'P':
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
                         Debug.Log("Spawning player");
-                        break;
-                    case 'M':
-                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/blob_monster"));
-                        break;
-                    case 'S':
-                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/spike"));
                         break;
                     default:
                         tile = null;

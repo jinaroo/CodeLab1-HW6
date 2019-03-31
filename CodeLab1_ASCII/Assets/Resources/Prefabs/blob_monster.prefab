@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7629036379434626592}
   - component: {fileID: 7629036379434626623}
   - component: {fileID: 7629036379434626622}
+  - component: {fileID: 5256576700684207551}
+  - component: {fileID: 590340159483724865}
   m_Layer: 0
   m_Name: blob_monster
   m_TagString: Untagged
@@ -99,3 +101,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &5256576700684207551
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629036379434626621}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35744682
+--- !u!114 &590340159483724865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629036379434626621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9191b70b97e94409cb348533fbaf7475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
