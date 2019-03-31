@@ -41,6 +41,12 @@ public class AsciiLevelLoader : MonoBehaviour
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
                         Debug.Log("Spawning player");
                         break;
+                    case 'M':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/blob_monster"));
+                        break;
+                    case 'S':
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/spike"));
+                        break;
                     default:
                         tile = null;
                         break;
