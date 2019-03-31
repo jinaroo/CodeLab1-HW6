@@ -8,7 +8,7 @@ public class AsciiLevelLoader : MonoBehaviour
     public float cellWidth;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         string filePath = Application.dataPath + "/level0.txt";
 
@@ -38,7 +38,8 @@ public class AsciiLevelLoader : MonoBehaviour
                         tile = Instantiate(Resources.Load<GameObject>("Prefabs/square"), transform);
                         break;
                     case 'P':
-                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/player"), transform);
+                        tile = Instantiate(Resources.Load<GameObject>("Prefabs/player"));
+                        Debug.Log("Spawning player");
                         break;
                     default:
                         tile = null;

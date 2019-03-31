@@ -13,11 +13,22 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // finds player in scene
+        player = GameObject.FindWithTag("Player");
+        GetPlayerPos();
+
+        transform.position = playerPosition;
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+        GetPlayerPos();
+        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
+    }
+
+    void GetPlayerPos()
     {
         playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 
@@ -26,8 +37,5 @@ public class CameraController : MonoBehaviour
             
         else
             playerPosition = new Vector3(playerPosition.x - offsetX, playerPosition.y + offsetY, playerPosition.z);
-
-        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
-
     }
 }

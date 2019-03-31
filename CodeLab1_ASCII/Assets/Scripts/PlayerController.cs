@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.7f, groundCheckHeight), 0, whatIsGround);
+        grounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(0.725f, groundCheckHeight), 0, whatIsGround);
 
         // movement
         float moveDirection = Input.GetAxis("Horizontal"); // checks to see if player is going left or right

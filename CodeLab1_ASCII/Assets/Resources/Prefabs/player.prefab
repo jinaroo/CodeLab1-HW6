@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6764244632467089861}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6764244632467089887}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c82719d3d451940baaeb30c49727f632, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   maxSpeed: 5
   jumpForce: 250
   groundCheck: {fileID: 6764244632211939198}
-  groundRadius: 0.1
+  groundCheckHeight: 0.05
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
